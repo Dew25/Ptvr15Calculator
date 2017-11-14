@@ -5,6 +5,8 @@
  */
 package classes;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Melnikov
@@ -12,10 +14,22 @@ package classes;
 public class InputData {
     private String number1;
     private String number2;
+    private String znak;
 
     public InputData() {
     }
-
+    public void init(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Введите первое число: ");
+        this.number1= scanner.nextLine();
+        System.out.print("Введите знак: ");
+        this.znak= scanner.nextLine();
+        System.out.print("Введите второе число: ");
+        this.number2= scanner.nextLine();
+        Calkul calkul = new Calkul();
+        System.out.println(calkul.getResult(number1, znak, number2));
+        
+    }
     public String getNumber1() {
         return number1;
     }
